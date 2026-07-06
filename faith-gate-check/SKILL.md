@@ -1,4 +1,4 @@
-﻿---
+---
 name: faith-gate-check
 description: Binary quality gate — check language quality, task completion, and publish readiness. Returns PASS or FAIL only, never edits content. Use when the user says "能发了吗", "过一遍质量门禁", "发布前检查", "gate check", or when faith-pipeline reaches Phase 7. Not for AI-pattern detection (→ faith-humanizer) or content diagnosis (→ dbs-content).
 disable-model-invocation: true
@@ -70,4 +70,4 @@ version: "3.0.0 | R3: mattpocock deep reconstruction | 2026-07-06 | model: agnos
 | Single article targets multiple platforms | Judge by strictest rule |
 
 ---
-*version: 3.0.0 | leading word: gate-pass-fail | ref: mattpocock/skills writing-great-skills*
+*version: 3.0.0 | leading word: gate | ref: mattpocock/skills writing-great-skills*

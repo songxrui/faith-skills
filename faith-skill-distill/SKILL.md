@@ -1,4 +1,4 @@
-﻿---
+---
 name: faith-skill-distill
 description: Extract the executable skeleton from a skill — strip reference, keep only steps and gates. Use when the user wants to "提取skill骨架", "精简skill", or needs a minimal runnable version of a skill. Not for skill creation (→ faith-skill-architect) or deployment (→ faith-skill-deploy).
 disable-model-invocation: true
@@ -47,4 +47,4 @@ Check the distilled skill is self-contained — can an agent execute it without 
 | Skill file unreadable | Output error, stop |
 
 ---
-*version: 2.0.0 | leading word: distill-classify-strip | ref: mattpocock/skills writing-great-skills*
+*version: 2.0.0 | leading word: distill | ref: mattpocock/skills writing-great-skills*

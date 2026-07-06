@@ -174,4 +174,4 @@ Scan every sentence against:
 | 三条线形成三角互锁。 | 隐喻框架替代分子层面因果 | 下丘脑-垂体-肾上腺轴控制皮质醇。它同时影响睡眠周期和多巴胺合成。胰岛素敏感度同时影响血糖和多巴胺信号转导。 |
 
 ---
-*version: 6.3.0 | leading word: audit-replace-verify-calibrate | v1→v3 iteration learnings baked in: M-class lazy connectors + Voice D mechanism recalibration | ref: mattpocock/skills writing-great-skills*
+*version: 6.3.0 | leading word: audit | v1→v3 iteration learnings baked in: M-class lazy connectors + Voice D mechanism recalibration | ref: mattpocock/skills writing-great-skills*

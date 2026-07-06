@@ -3,7 +3,7 @@ name: faith-skill-solution
 description: Evaluate, forge, or synthesize skills — 6-gate audit, targeted optimization, and multi-skill merging. Use when the user says "评测这个skill", "优化skill", "合成两个skill", "forge skill", "skill质量审计", or mentions multiple skill names together. Not for initial design (→ faith-skill-architect) or deployment (→ faith-skill-deploy).
 disable-model-invocation: true
 argument-hint: "[skill-path-or-paths]"
-version: "2.0.0 | R2: mattpocock deep reconstruction | 2026-07-06 | model: agnostic"
+version: "3.0.0 | R3: mattpocock full alignment | 2026-07-06 | model: agnostic"
 ---
 
 # faith-skill-solution — Skill 评测/锻造/合成
@@ -41,15 +41,30 @@ Run G1-G6 checks on the target SKILL.md. Each gate returns PASS/FAIL.
 
 ## Mode B: Forge (targeted optimization)
 
-Take an evaluated skill and apply fixes.
-**Completion criterion**: (1) All G1-G6 gates that failed in evaluation now pass; (2) Changelog output (what changed, why, per fix).
+Take an evaluated skill and apply fixes step by step.
+
+- **Step 1: Read the evaluation report** — Load the Mode A report (or a provided evaluation file) and extract all FAIL gates, ordered by impact (G1>G2>G3>G4>G5>G6).
+- **Step 2: Apply fixes in priority order** — For each FAIL gate, apply the minimal fix:
+  - G1 (Size): Strategic-compact or split into referenced sub-files.
+  - G2 (Frontmatter): Add missing name, description (<1024 chars), or argument-hint.
+  - G3 (Steps): Add completion criteria (checkable condition) to every step.
+  - G4 (Reference): Move heavy reference content behind file pointers.
+  - G5 (Gates): Add at least one gate or verification checkpoint.
+  - G6 (Leading word): Add a compact concept word in bold on the overview line.
+- **Step 3: Re-run gates to verify** — Execute G1-G6 on the patched file.
+- **Completion criterion**: All previously FAIL gates now PASS; changelog output (what changed, why, per fix).
 
 ---
 
 ## Mode C: Synthesize (multi-skill merge)
 
-Merge ≥2 skills into one cohesive skill.
-**Completion criterion**: (1) Unified leading word; (2) No duplicate sections; (3) All original gates preserved or consolidated; (4) Boundary section defines relationship with source skills.
+Merge ≥2 skills into one cohesive skill step by step.
+
+- **Step 1: Read all source skills** — Load every target SKILL.md in full. Note each skill's leading word, frontmatter, mode sections, and gates.
+- **Step 2: Identify overlaps and conflicts** — Map sections across skills (e.g., both have "Setup", both have "G1-G6"). Flag conflicts where two skills define the same section differently.
+- **Step 3: Merge with unified leading word** — Choose or synthesize a single compact concept word that covers all source skills. Merge frontmatter (description ≤1024 chars combining all intent). For conflicting sections, pick the more complete definition or fuse them with clear attribution.
+- **Step 4: Deduplicate and consolidate gates** — Collapse duplicate steps/sections into single definitions. Preserve all unique gates from every source skill; merge overlapping gates into one stronger gate. Verify no section is repeated.
+- **Completion criterion**: Single cohesive SKILL.md with unified leading word, no duplicate sections, all original gates preserved or consolidated, boundary section defines relationship with source skills.
 
 ---
 
@@ -60,6 +75,11 @@ Merge ≥2 skills into one cohesive skill.
 | Target skill file not found | Output error path, stop |
 | Mode unclear from user input | Ask explicit question, don't guess |
 | Synthesize with incompatible skills | Flag incompatibilities, suggest keeping separate |
+| Evaluation report missing in forge mode | Run Mode A first, then proceed with forge |
+| Patch introduces new FAIL gate | Revert patch, try alternative fix, flag if blocked 3x |
+| Source skills share identical content | Flag redundancy, recommend single skill instead of synthesize |
+| Merged file exceeds G1 size limit | Apply strategic-compact or split into referenced sub-files |
+| User provides unspecified mode hint (colloquial) | Re-parse against mode routing table; if still unclear, ask |
 
 ---
-*version: 2.0.0 | leading word: evaluate-forge-synthesize | ref: mattpocock/skills writing-great-skills*
+*version: 3.0.0 | leading word: evaluate | ref: mattpocock/skills writing-great-skills*

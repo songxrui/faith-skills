@@ -1,4 +1,4 @@
-﻿---
+---
 name: faith-pipeline
 description: Full content pipeline — source extraction through multi-platform publish, 7 phases in sequence. Use when the user says "帮我出篇文章", "从素材到发布", "做一期内容", "全流程创作", "一鱼多吃", or wants to go from raw material to published content across platforms. Not for single-phase work (creation → faith-viral-write; de-AI → faith-humanizer; format → baoyu-*).
 disable-model-invocation: true
@@ -48,4 +48,4 @@ D:\KnowledgeBase\_alchemist\output\<date>_<topic>\
 ```
 
 ---
-*version: 2.0.0 | leading word: orchestrate-gate-ship | ref: mattpocock/skills writing-great-skills*
+*version: 2.0.0 | leading word: orchestrate | ref: mattpocock/skills writing-great-skills*

@@ -1,4 +1,4 @@
-﻿---
+---
 name: faith-prompt-compile
 description: Compile fuzzy tasks into reproducible, verifiable, low-bloat prompts — a five-step algorithm with task-type routing and a built-in auditor. Use when the user says "优化提示词", "prompt engineering", "编译提示词", "写提示词", or finds a prompt too wordy. Not for direct task execution (→ corresponding skill) or context compression (→ faith-context-compress).
 disable-model-invocation: true
@@ -79,4 +79,4 @@ Simple: 300-700 chars / Medium: 700-1500 chars / Complex: 1500-2500 chars.
 Exceeding 2500 chars requires confirmation that every section directly improves output quality.
 
 ---
-*version: 2.0.0 | leading word: compile-question-delete-simplify | ref: mattpocock/skills writing-great-skills*
+*version: 2.0.0 | leading word: compile | ref: mattpocock/skills writing-great-skills*

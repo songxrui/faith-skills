@@ -1,9 +1,9 @@
 ﻿---
 name: faith-skill-architect
-description: "Triage skill requests into design/review/optimize modes, then build skills with a fixed 6-layer structure. Use when the user says \`"设计一个skill\`", \`"评审这个skill\`", \`"优化我的skill\`", or needs a new skill architected from scratch. Not for deployment (→ faith-skill-deploy) or evaluation-only (→ faith-skill-solution)."
+description: "Triage skill requests into design/review/optimize modes, then build skills with a fixed 6-layer structure. Use when the user says `"设计一个skill"`, `"评审这个skill"`, `"优化我的skill"`, or needs a new skill architected from scratch. Not for deployment (→ faith-skill-deploy) or evaluation-only (→ faith-skill-solution)."
 disable-model-invocation: true
 argument-hint: "[skill-name-or-goal]"
-version: "2.1.0 | R2.1: mattpocock description alignment | 2026-07-06 | model: agnostic"
+version: "3.0.0 | R3: mattpocock full alignment | 2026-07-06"
 ---
 
 # faith-skill-architect -- Skill架构引擎
@@ -58,19 +58,22 @@ read_file 读取目标 SKILL.md。
 | L1 | frontmatter存在？description含触发词+不适用+正反例？ | 通过/失败 |
 | L2 | 触发条件清晰？有正反例？ | 通过/失败 |
 | L3 | 步骤带完成标准（可验证的输出要求）？ | 通过/失败 |
-| L4 | 验证清单至少3项？ | 通过/失败 |
-| L5 | 失败模式至少2条？ | 通过/失败 |
-| L6 | 文件小于10KB？触发词至少3个？ | 通过/失败 |
+| L4 | ≥3 checkbox gate items? 每项 pass/fail 可判定？ | 通过/失败 |
+| L5 | ≥2 failure modes with recovery actions? | 通过/失败 |
+| L6 | 文件大小 ≤10KB? description 含 ≥3 trigger words + boundaries? | 通过/失败 |
 
 **完成标准**: 输出6项评分表 + 总分 + 修复优先级排序。
 
 ## 模式C: 优化已有Skill
 
-### 步骤1: 先走模式B评审
-### 步骤2: 按优先级逐项修复
-### 步骤3: 输出优化后的SKILL.md + 改动清单
+### 步骤1: Run Mode B audit to identify gaps
+**完成标准**: 输出完整6层审计报告，每层标注通过/失败及具体缺口。
 
-**完成标准**: 改动清单列出每项改动的原因和效果（一句话）。
+### 步骤2: Apply fixes in priority order (P0 structural → P1 design)
+**完成标准**: 每个修复项附带改动原因、old值→new值对比。
+
+### 步骤3: Re-audit to confirm all issues resolved
+**完成标准**: 二次评审6层全部通过，改动清单标注各修复项状态。
 
 ## 失败模式
 
@@ -81,4 +84,4 @@ read_file 读取目标 SKILL.md。
 | 输出SKILL.md超过10KB | 拆参考内容到references子目录 |
 
 ---
-*version: 2.0.0 | principle: triage-design-audit | ref: Matt Pocock 7 Principles*
+*version: 3.0.0 | principle: triage | ref: Matt Pocock 7 Principles*

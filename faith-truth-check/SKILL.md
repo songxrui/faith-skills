@@ -1,4 +1,4 @@
-﻿---
+---
 name: faith-truth-check
 description: Verify factual claims — cross-check data sources, assess reliability tiers, flag unverifiable assertions. Use when the user says "核实一下", "这个数据是真的吗", "fact check", or before publishing content with claims. Not for content quality (→ faith-gate-check) or style (→ faith-humanizer).
 disable-model-invocation: true
@@ -65,4 +65,4 @@ Total claims: N | T1: N | T2: N | T3: N | T4: N | T5: N
 | Claim is vague ("很多人认为") | Flag as "unverifiable due to vagueness — specify who/how many" |
 
 ---
-*version: 3.0.0 | leading word: verify-tier-report | ref: mattpocock/skills writing-great-skills*
+*version: 3.0.0 | leading word: verify | ref: mattpocock/skills writing-great-skills*

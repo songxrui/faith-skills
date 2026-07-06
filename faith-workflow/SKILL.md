@@ -1,4 +1,4 @@
-﻿---
+---
 name: faith-workflow
 description: Design multi-agent execution plans — decompose tasks into capsules, orchestrate as parallel/sequential/pipeline, define rollback rules. Use when the user wants to "编排工作流", "设计多Agent方案", "并行处理", or needs a complex task broken into coordinated sub-tasks with recovery. Not for content-only pipelines (→ faith-pipeline).
 disable-model-invocation: true
@@ -78,4 +78,4 @@ The complete 4-field design.
 | Post-rollback state inconsistency | Each capsule's output files managed separately; rollback never overwrites passed stages |
 
 ---
-*version: 3.0.0 | leading word: orchestrate-capsules-rollback | ref: mattpocock/skills writing-great-skills*
+*version: 3.0.0 | leading word: orchestrate | ref: mattpocock/skills writing-great-skills*

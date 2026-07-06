@@ -1,4 +1,4 @@
-﻿---
+---
 name: faith-viral-write
 description: Sharpen short-form content for spread — score the hook, tighten structure, design for virality. Use when the user wants to optimize a draft for social media, asks for better hooks, or says "帮我优化开头", "这个选题能爆吗", "帮我改成爆款". Not for long-form articles or de-AI work (→ faith-humanizer).
 disable-model-invocation: true
@@ -81,4 +81,4 @@ Score the topic on three axes (1-5 each):
 | User only wants polish/润色 | Skip full process, only do Step 4 format adjustment + Step 5 title supplement |
 
 ---
-*version: 3.0.0 | leading word: sharpen-score-structure | ref: mattpocock/skills writing-great-skills*
+*version: 3.0.0 | leading word: sharpen | ref: mattpocock/skills writing-great-skills*
