@@ -1,9 +1,9 @@
----
+﻿---
 name: faith-skillwriter
 description: Author new skills from requirements or sharpen existing ones — applies Matt Pocock writing-great-skills principles by default. Use when the user says "写一个skill", "创建skill", "帮我写skill", "优化这个skill", "按matt原则改skill", or describes what a new skill should do. Not for deployment to GitHub (→ faith-skill-deploy) or multi-skill synthesis (→ faith-skill-solution).
 disable-model-invocation: true
 argument-hint: "[create-or-optimize]"
-version: "1.0.0 | R1: initial release | 2026-07-06 | model: agnostic"
+version: "2.0.0 | R2: self-audit pass + standardized footer | 2026-07-06 | model: agnostic"
 ---
 
 # faith-skillwriter — 原则驱动的 Skill 写作器
@@ -163,4 +163,4 @@ Output the optimized SKILL.md + changelog.
 | Push to GitHub | faith-skill-deploy |
 
 ---
-*version: 1.0.0 | leading word: author | ref: mattpocock/skills writing-great-skills*
+*version: 2.0.0 | leading word: author | ref: mattpocock/skills*
