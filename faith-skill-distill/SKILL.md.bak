@@ -1,0 +1,114 @@
+---
+name: skill-distiller
+description: Extract reusable skills from completed tasks. Use after finishing a high-value task to capture patterns, pitfalls, and workflows as new or updated skills.
+metadata:
+  short-description: Extract reusable skills from completed work
+---
+
+# Skill Distiller
+
+Extract reusable skills, checklists, and known pitfalls from completed tasks.
+The goal is to turn one-off experience into durable engineering memory.
+
+## When to Use
+
+- After completing a non-trivial task
+- When you notice a pattern that has repeated ≥2 times
+- When the user says "remember this for next time" or "make this a skill"
+- At the end of a ds-tui-iteration-engineer session
+
+## Distillation Process
+
+### Step 1: Identify the Reusable Core
+
+Ask:
+- What did I learn that I didn't know before?
+- What step took the most time? Could it be automated?
+- What mistake did I make? How would I prevent it next time?
+- What decision did I make? Why? What was the trade-off?
+- What would I tell another engineer starting this task?
+
+### Step 2: Choose the Right Artifact Type
+
+| What was learned | Best artifact |
+|-----------------|---------------|
+| A repeatable process | New skill (`SKILL.md`) |
+| A checkable list of rules | New checklist (inline in skill) |
+| A thing to avoid | Known pitfall (in skill or memory) |
+| A project convention | Update existing skill or AGENTS.md |
+| A test pattern | Test helper or doc comment |
+| A config gotcha | Config example or comment |
+
+### Step 3: Write the Skill
+
+Follow the standard SKILL.md format:
+
+```markdown
+---
+name: <kebab-case-name>
+description: Use when <specific trigger condition>. Mention key trigger words.
+metadata:
+  short-description: <one line>
+---
+
+# <Title>
+
+## Trigger
+[Exact conditions that should trigger this skill]
+
+## Process
+[Step-by-step instructions]
+
+## Pitfalls
+[Known issues and how to avoid them]
+
+## Verification
+[How to confirm the skill worked]
+
+## Related Skills
+[Cross-references]
+```
+
+### Step 4: Validate
+
+- [ ] The skill name is unique
+- [ ] The description is specific enough to auto-trigger correctly
+- [ ] Each step is concrete (tool name + input → expected output)
+- [ ] Pitfalls are based on real experience, not hypothetical
+- [ ] Verification is testable
+
+## Skill Quality Rules
+
+**Good description:** "Use when fixing a failing test in the CodeWhale TUI
+test suite that requires Windows path isolation."
+**Bad description:** "Use for testing."
+
+**Good step:** "Run `cargo test -p codewhale-tui -- <test_name> --nocapture`
+and copy the panic message."
+**Bad step:** "Run the tests."
+
+**Good pitfall:** "`dirs::home_dir()` ignores HOME env var on Windows — use
+injectable `home_dir` parameter instead."
+**Bad pitfall:** "Tests might fail on Windows."
+
+## When NOT to Distill
+
+- The task was trivial (single-line fix, typo)
+- The pattern requires context that won't survive to the next session
+- The pattern is already covered by an existing skill
+- The pattern is project-specific and belongs in AGENTS.md instead
+
+## Lifecycle
+
+Skills have a natural lifecycle:
+
+1. **Created**: after a task reveals a repeatable pattern
+2. **Used**: triggered by description match in future sessions
+3. **Updated**: when a better approach is found or the codebase changes
+4. **Deprecated**: when the underlying system changes (add `deprecated: true`
+   to frontmatter, keep the file for reference)
+5. **Retired**: when no longer relevant (remove from active skills dir)
+
+Never delete a skill without archiving it first. Skills represent engineering
+decisions and context — even deprecated skills have value for understanding
+why things are the way they are.

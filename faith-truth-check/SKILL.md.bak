@@ -1,0 +1,51 @@
+﻿# SKILL: content-truth-lock（内容坐实·真实优化·不欺骗不虚标）
+
+version: 1.0
+owner: 再创世
+basis: Prompt-OS v8.0（马斯克最优）+ verification-loop / compile-and-verify / humanizer-zh / exa-search / weread-skills / deep-research
+repos: D:\_alchemist\output\（媒体稿） · D:\KnowledgeBase\（知识库）· GitHub songxrui/knowledge-base · 飞书 jcn1crrvstv9
+
+## WHEN TO USE
+任何要优化/质检/上报存量内容质量或"真实可发布率"时，长期反复调用。取代一次性提示词。
+
+## CORE TRUTH（一句话）
+真实进展 = 锁死分母上、经库外独立验证通过的精确可发布篇数。其余都是装饰。
+
+## 六条铁律（违任何一条 = 本轮作废重跑）
+1. 单口径锁定：一个分母定义 + 一个"可发布"定义 + 一个验证标准，全写进 METHODOLOGY_LOCK.md。禁止任何新分母/新标准中途出现。
+2. 库外四证据：每篇过审须 E1–E4 全过（定义见下）。库内文章互相引用一律不算验证。
+3. 分子无波浪号：真实率分子必须是逐篇核出的精确整数，禁用 ~30 这类约数。
+4. 接受下行：实测低于声称就如实下调（22.6% 就写 22.6%），绝不为护数字放水。
+5. 跳涨 = 造假：单轮涨幅 >10pp 默认造假，需逐篇举证；任何 ≥90%/近满分真实率是头号嫌疑，默认证伪。
+6. 反秒产：内容审计/红队/修复有 token·时间下限；秒产 = 盖章红旗（文件盘点/grep/hash 可快，内容验证不可快）。熵减/删除不为真实率背书。
+
+## 五证据门 E1–E4（逐篇判定，缺一不过）
+- E1 论断拆解：文章每个核心事实/数据/引文拆成可核断言，编号进 LEDGER。
+- E2 库外独立搜索：每条断言经 weread/exa/deep-research 库外检索，不准拿本库其他文章当来源。
+- E3 内容实质修改≥5处：验证后有实际 before→after 正文修改≥5处；"只追加 LEDGER 块不改正文"不过。
+- E4 库外溯源≥2：每篇至少 2 条库外一手来源（有链接/书名页码/DOI）；0–1 条不过。
+- 补充：评者≠执行者——验证/盲评须独立于写作步骤；禁三段式·禁禁用词·禁 AI 腔。
+
+## 五阶段协议（长任务循环，每轮走全）
+Phase 0 口径自检：读 METHODOLOGY_LOCK.md 确认 N 与三定义；缺则先建，不得边做边改口径。
+Phase 1 现状坐实：对全量或本轮范围逐篇 E1–E4 判定 → NUMERATOR_LOCK.md，出精确分子与精确真实率（整数/N，无波浪号）。
+Phase 2 真修复：从 BACKLOG 取 5–8 篇高价值篇走库外真流水线：拆解论断 → 库外检索溯源 → 独立红队≥2轮 → 逐条修 before→after → 红队二轮至零 → 独立盲评放行 → humanizer≥5处。
+Phase 3 重算：新增过审篇计入分子，更新精确真实率 → PUBLISHABLE_TREND.md；单轮涨幅 ≤10pp，超出需逐篇举证。
+Phase 4 自审+吞吐：DoD 逐条；LOCK_COST.md 记耗时/token、点破秒产矛盾；三端同步（本地/GitHub/飞书）。
+
+## 账本产出（唯一真相来源）
+- METHODOLOGY_LOCK.md — N + 三定义，单口径
+- NUMERATOR_LOCK.md — 逐篇 E1–E4 判定 + 精确分子
+- PUBLISHABLE_TREND.md — 唯一权威真实率 + 爬坡记账（作废旧口径）
+- LOCK_COST.md — 吞吐自洽·盖章标红
+- （涉删）DELETION_LEDGER.md — before→after + 理由，git mv 归档不硬删
+
+## DoD（全满足才算完成）
+- [ ] METHODOLOGY_LOCK 口径未变（N 不动）
+- [ ] NUMERATOR_LOCK 逐篇四证据 + 精确分子（无波浪号）
+- [ ] 本轮 5–8 篇库外独立验证修复，每篇 E1–E4 全过 + humanizer≥5处
+- [ ] 真实率 = 整数/N，单轮 ≤10pp，接受下行已记录
+- [ ] LOCK_COST 吞吐自洽，无秒产盖章；三端同步
+
+## 一票否决反模式（出现即判本轮无效）
+秒产内容审计 · 单轮跳涨>10pp · 新分母/新标准 · 交叉引用充库外验证 · 只追加 LEDGER 不改正文 · ≥90%无逐篇证据 · 熵减/删除背书真实率 · 护数字拒绝下行 · 三段式/禁用词/AI 腔
